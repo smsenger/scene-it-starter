@@ -13,23 +13,16 @@ function saveToWatchList(imdbID) {
     const movie = movieData.find(function(currentMovie){
                 return currentMovie.imdbID == imdbID;
             }); 
-            
-            console.log("movieData");
-            console.log(movieData);
-            console.log("movie");
-            console.log(movie);
 let watchlistJSON = localStorage.getItem('watchlist');
 let watchlist = JSON.parse(watchlistJSON);
 if (watchlist == null) {
     watchlist = [];
     watchlist.push(movie);
-    console.log(watchlist);
     watchlistJSON = JSON.stringify(watchlist);
     localStorage.setItem('watchlist', watchlistJSON);
 }
 else {
     watchlist.push(movie);
-    console.log(watchlist);
     watchlistJSON = JSON.stringify(watchlist);
     localStorage.setItem('watchlist', watchlistJSON);
 }
@@ -51,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <h3 class="ml--3" >${currentMovie.Title}</h3>
                             <h4 class="mr--3">${currentMovie.Year}</h4>
                         </div>
-                            <div class="b"><button onclick="saveToWatchList('${currentMovie.imdbID}')" class="btn btn-primary btn-sm">Add Movie</button></div>
+                            <div id="b"><button onclick="saveToWatchList('${currentMovie.imdbID}')" class="btn btn-primary btn-sm">Add Movie</button></div>
                             </div>
                     </div>`
         })
@@ -63,10 +56,8 @@ document.addEventListener('DOMContentLoaded', function() {
         let searchString = $('.search-bar').val();
         let urlEncodedSearchString = encodeURIComponent(searchString);
         axios.get("http://www.omdbapi.com/?apikey=b43843a0&s=" + urlEncodedSearchString).then(function(response) {
-            console.log(response.data);
             movie.innerHTML = renderMovies(response.data.Search);
             movieData = response.data.Search;
-            console.log(movieData);
             return movieData;
             
         });
