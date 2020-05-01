@@ -31,7 +31,6 @@ const movie = document.getElementsByClassName("movie")[0];
 function removeFromWatchList(imdbID) {
     let watchlistJSON = localStorage.getItem('watchlist');
     let watchlist = JSON.parse(watchlistJSON);
-    console.log("I like sexy butts!");
     console.log(watchlist);
     watchlist = watchlist.filter(function(movie) {    
         return movie.imdbID != imdbID
