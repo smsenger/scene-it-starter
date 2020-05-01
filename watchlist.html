@@ -9,36 +9,32 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="index.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="container">
       <div class="row">
         <div class="col-12 header text-center">
-          <h2 class="display-2">Scene It</h2>
-          <p><i>Search for movies you want to watch.</i></p>
-          <p><i>Save them to your list</i></p>
-          <p><a href="watchlist.html"><button class="btn btn-primary input-group-btn" type="submit" id="mylist">Go to my watchlist</button></a></p>
+
+          
+            <h2 class="display-2 scene-it">Scene It</h2>
+            
+            
+            <p><i>Search for movies you want to watch.</i></p>
+            <p><i>Save them to your list</i></p>
+            <p><a href="index.html"><button class="btn btn-primary input-group-btn watch-button" type="submit" id="mylist">HOME</button></a></p>
         </div>
       </div>
       <div class="row">
         <div class="col-12 search">
-          <form id="search-form">
-            <div class="input-group input-group-lg">
-              <input
-                class="form-control search-bar"
-                placeholder="Search for a movie..."
-              />
-              <button class="btn btn-primary input-group-btn" type="submit">
-                Search
-              </button>
+            
             </div>
-          </form>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12 results">
-          <!-- MOVIES SHOW UP HERE! -->
-          <div class="movies-container">
+          </div>
+          <div class="row">
+            <div class="col-12 results">
+              <h2 id="watchlist">Movie watch list...</h2>
+            <!-- MOVIES SHOW UP HERE! -->
+            <div class="movies-container">
               <div class="movie row">
                          
                   
@@ -65,6 +61,6 @@
     ></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="data.js"></script>
-    <script src="index.js"></script>
+    <script src="watchlist.js"></script>
   </body>
 </html>
